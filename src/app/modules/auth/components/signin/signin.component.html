@@ -1,0 +1,38 @@
+<h4 class="w-100 text-center mt-2 mb-2">
+  {{'login' | lang}}
+</h4>
+<form class="row" [formGroup]="loginForm" (submit)="submitForm()">
+  <section class="col-12">
+    <!-- <label for="email">{{'emailAddress' | lang}}</label> -->
+    <div class="input-div d-flex align-items-center justify-content-between">
+      <fa-icon [icon]="['far','envelope']"></fa-icon>
+      <input type="email" formControlName="email" class="form-control" [placeholder]="'emailAddress' | lang">
+    </div>
+    <app-form-error-handeling *ngIf="submitted" [controlVal]="loginForm.value.email" [formRef]="loginForm"
+      [controlName]="'email'"></app-form-error-handeling>
+  </section>
+  <section class="col-12">
+    <!-- <label for="password">{{'password' | lang}}</label> -->
+    <div class="input-div d-flex align-items-center justify-content-between">
+      <fa-icon [icon]="['fas','lock']"></fa-icon>
+      <input [type]="showPassword ? 'text' : 'password'" formControlName="password" class="form-control"
+        [placeholder]="'password' | lang">
+      <fa-icon *ngIf="!showPassword" (click)="showPassword = !showPassword" [icon]="['far','eye']"
+        class="gray-light"></fa-icon>
+      <fa-icon *ngIf="showPassword" (click)="showPassword = !showPassword" [icon]="['far','eye-slash']"
+        class="gray-light"></fa-icon>
+    </div>
+    <app-form-error-handeling *ngIf="submitted" [controlVal]="loginForm.value.password" [formRef]="loginForm"
+      [controlName]="'password'"></app-form-error-handeling>
+  </section>
+  <div class="d-flex align-items-center justify-content-end w-100 footer">
+    <small [routerLink]="['../forget-password']" routerLinkActive="router-link-active">{{'forgotPassword' | lang}}</small>
+  </div>
+  <div class="d-flex align-items-center justify-content-center w-100">
+    <input type="submit" [disabled]="loading" class="login" [value]="'login' | lang">
+  </div>
+</form>
+<div class="footer d-flex align-items-center">
+  <small>{{'dontHaveAnAccountYet' | lang}}</small>
+  <small [routerLink]="['../signup']" routerLinkActive="router-link-active">{{'signup' | lang}}</small>
+</div>

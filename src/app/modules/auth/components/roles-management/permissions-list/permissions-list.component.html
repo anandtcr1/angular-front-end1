@@ -1,0 +1,24 @@
+<div class="permissions-container">
+    <h4 class="mb-5">{{'permissionsManagement' | lang}}</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>{{'name' | lang}}</th>
+                <th>{{'description' | lang}}</th>
+                <th>{{'' | lang}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of permissions">
+                <td>
+                    {{item.name}}</td>
+                <td>{{item.description}}</td>
+                <td class="vertical-align-middle">
+                    <div class="proccess-icon d-flex align-items-center justify-content-between">
+                        <fa-icon class="delete red cursor-pointer" [icon]="faTrash"></fa-icon>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,26 @@
+<ng-container *ngFor="let item of errors | keyvalue">
+    <small class="error-line d-flex flex-column align-items-start">
+        <span *ngIf="item.key == 'email' && item.value">
+            {{'invalidEmail' | lang}}
+        </span>
+        <span *ngIf="item.key == 'required' && item.value">
+            {{'thisFieldIsRequired' | lang}}
+        </span>
+        <span *ngIf="item.key == 'pattern' && check(controlName)">
+            {{'invalidInput' | lang}}
+        </span>
+        <span *ngIf="item.key == 'pattern' && (controlName == 'password' || controlName == 'userPassword')">
+            {{'yourPasswordNeedsToContains' | lang}}
+            <ul>
+                <!-- <li>{{'atLeast8CharactersInLength' | lang}}</li> -->
+                <li>{{'lowercaseLetters' | lang}}</li>
+                <li>{{'uppercaseLetters' | lang}}</li>
+                <li>{{'numbers' | lang}}</li>
+                <li>{{'specialCharacters' | lang}}</li>
+            </ul>
+        </span>
+        <span *ngIf="item.key == 'pattern' && (controlName == 'phone' || controlName == 'phoneNumber')">
+            {{'yourPhoneNeedsToBeAsThisPattern' | lang}}
+        </span>
+    </small>
+</ng-container>

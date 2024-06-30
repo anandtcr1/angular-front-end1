@@ -1,0 +1,14 @@
+@import "src/app/shared/styles/mixin";
+
+.admin-content {
+    padding-top: 60px;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    display: flow-root;
+    align-items: center;
+    overflow: auto;
+    justify-content: center;
+    @include media-lt-lg {
+        padding-inline-end: 1rem;
+    }
+}

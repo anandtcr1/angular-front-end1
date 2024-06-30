@@ -1,0 +1,18 @@
+<popup [title]="'chooseYourLanguage' | lang">
+    <div class="lang-popup x-font-bold">
+        <div class="d-flex justify-content-center row my-4">
+            <button class="x-btn-mail-primary x-english-bold px-2 py-1"
+                [ngClass]="{'bg-blue':selectedLanguage == languageEnum.English}"
+                (click)="selectedLanguage = languageEnum.English">
+                English
+            </button> 
+            <button class="x-btn-mail-primary x-arabic-bold px-2 py-1" [ngClass]="{'bg-blue':selectedLanguage == languageEnum.Arabic}"
+                (click)="selectedLanguage = languageEnum.Arabic">
+                العربية
+            </button>
+        </div>
+        <div class="d-flex justify-content-center w-100">
+            <button class="x-btn-mail-primary bg-blue x-font-bold" (click)="changeLang()">{{'continue' | lang}}</button>
+        </div>
+    </div>
+</popup>

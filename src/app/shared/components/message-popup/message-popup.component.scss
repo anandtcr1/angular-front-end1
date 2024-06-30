@@ -1,0 +1,63 @@
+@import "../../styles/mixin";
+@import "../../styles/functions";
+
+popup {
+    @include media-lt-xl {
+        font-size: 12px;
+    }
+
+    @include media-xxl {
+        font-size: 14px;
+    }
+
+    .message-popup {
+        margin-top: 2rem;
+
+        @include media(1400px, auto) {
+            padding: 0 1.7rem;
+        }
+
+        h2 {
+            font-size: font-size(40);
+            color: $black;
+            text-align: center;
+
+            @include media(1400px, auto) {
+                margin-bottom: 2rem;
+                margin-top: 1rem;
+            }
+
+            @include media-lt-xs {
+                font-size: font-size(30);
+            }
+
+        }
+
+        >p {
+            font-size: font-size(20);
+            color: $gray;
+            text-align: center;
+        }
+
+        .x-btn-outline {
+            padding: 0.5rem 1rem;
+            width: 90px;
+
+            @include media(1400px, auto) {
+                padding: 0.7rem 1rem;
+                width: 113px;
+            }
+        }
+
+        .x-btn-primary {
+            padding: 0.5rem 3rem;
+
+            @include media(1400px, auto) {
+                padding: 0.6rem 4rem;
+                margin: 1rem 0 0.5rem;
+            }
+
+            text-transform: uppercase;
+        }
+    }
+}

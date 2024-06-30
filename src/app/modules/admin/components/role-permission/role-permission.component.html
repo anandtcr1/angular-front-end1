@@ -1,0 +1,61 @@
+<div class="users-container w-100">
+    <h4 class="mt-3">{{'rolePermissions' | lang}}</h4>
+    <div class="head">
+        <div class="row w-100">
+            <div class="col-lg-4 col-md-5 col-12 p-0 d-flex align-items-center">
+                <label class="font-weight-bold">{{'role' | lang}} :</label>
+                <select class="form-control w-fit-content" [(ngModel)]="roleId" (change)="getRolePermissions()">
+                    <option [value]="item.value" *ngFor="let item of roles">{{lang == langEnum.English ? item.englishDisplay : item.arabicDisplay}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="content" direction>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th width="10%" class="text-center">{{'active' | lang}}</th>
+                    <th>{{'PageName' | lang}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of allPermissions">
+                    <td class="text-center">
+                        <input type="checkbox" name="rolePermissions{{item.id}}" (change)="changePermissions(item)"
+                            [checked]="checkAllowPermission(item.id)">
+                    </td>
+                    <td>
+                        {{item.name}}
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="9">
+                        <div class="d-flex align-items-center justify-content-between pagination">
+                            <button [disabled]="filterRoleList.pageNumber <= 1" class="x-btn-mail-primary-outline"
+                                (click)="filterRoleList.pageNumber = filterRoleList.pageNumber - 1; getList();">
+                                {{'previous' | lang}}
+                            </button>
+                            <div>{{'page' | lang}} {{filterRoleList.pageNumber}} {{'of' | lang}}
+                                {{lastPageIndex}}</div>
+                            <button [disabled]="filterRoleList.pageNumber == lastPageIndex"
+                                class="x-btn-mail-primary-outline"
+                                (click)="filterRoleList.pageNumber = filterRoleList.pageNumber + 1; getList();">
+                                {{'next' | lang}}
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="control-btn d-flex align-items-center justify-content-end row">
+            <div class=" col-lg-3 col-md-4 col-6">
+                <button [disabled]="!changeFlag" class="x-btn-mail-primary-outline w-100"
+                    (click)="discardChanges()">{{'discardChanges' | lang}}</button>
+            </div>
+            <div class=" col-lg-3 col-md-4 col-6">
+                <button [disabled]="!changeFlag" class="x-btn-mail-primary bg-blue w-100"
+                    (click)="updatePages()">{{'save' | lang}}</button>
+            </div>
+        </div>
+    </div>
+</div>

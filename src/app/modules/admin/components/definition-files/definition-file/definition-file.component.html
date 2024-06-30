@@ -1,0 +1,33 @@
+<popup [title]="'addNew' | lang" [showCloseBtn]="true" [showLottieCircle]="true" [lottiePath]="data.iconPath"
+    [iconBackground]="true">
+    <form [formGroup]="createForm" class="admin-form" (ngSubmit)="save()">
+        <!-- <section class="mt-1">
+            <div class="input-div">
+                <label>{{'id' | lang}}</label>
+                <input type="number" class="form-control" formControlName="id">
+                <app-form-error-handeling *ngIf="validation" [controlVal]="createForm.value.id"
+                    [formRef]="createForm" [controlName]="'id'"></app-form-error-handeling>
+            </div>
+        </section> -->
+        <section class="mt-1">
+            <div class="input-div">
+                <label>{{'arabicDescription' | lang}}</label>
+                <input type="text" class="form-control" formControlName="arabicDescription">
+                <app-form-error-handeling *ngIf="validation" [controlVal]="createForm.value.arabicDescription"
+                    [formRef]="createForm" [controlName]="'arabicDescription'"></app-form-error-handeling>
+            </div>
+        </section>
+        <section class="mt-1">
+            <div class="input-div">
+                <label>{{'englishDescription' | lang}}</label>
+                <input type="text" class="form-control" formControlName="englishDescription">
+                <app-form-error-handeling *ngIf="validation" [controlVal]="createForm.value.englishDescription"
+                    [formRef]="createForm" [controlName]="'englishDescription'"></app-form-error-handeling>
+            </div>
+        </section>
+
+        <div class="d-flex align-items-center justify-content-center mt-5 w-100">
+            <input [disabled]="submitted" type="submit" [value]="'save' | lang" class="x-btn-mail-primary bg-blue">
+        </div>
+    </form>
+</popup>

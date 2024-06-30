@@ -1,0 +1,113 @@
+@import 'src/app/shared/styles/mixin';
+@import 'src/app/shared/styles/variables';
+
+.project-container {
+    padding: 15px 10px;
+    background-color: $white;
+
+    .header {
+        .personal-info {
+            .personal-img {
+                height: 50px;
+                width: 50px;
+                @include center-row-col;
+                margin-inline-end: 10px;
+
+                img {
+                    @include center-img;
+                }
+            }
+
+            .name,
+            .time {
+                color: $black-1;
+            }
+
+            .name {
+                font-weight: 700;
+            }
+
+            .time {
+                font-weight: 300;
+                font-size: 12px;
+            }
+
+            fa-icon{
+                margin-inline-start: auto;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .body {
+        width: 100%;
+
+        &.post {
+            height: 200px;
+        }
+
+        &.activity {
+            height: 150px;
+        }
+
+        .three-img {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            .main {
+                height: 100%;
+                width: 70%;
+                background-image: url('/assets/images/projects (3).png');
+                background-position: center;
+                background-size: cover;
+            }
+
+            .adds {
+                height: 100%;
+                width: 28%;
+                margin-inline-start: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                div {
+                    background-position: center;
+                    background-size: cover;
+                    height: 48%;
+                    width: 100%;
+
+                    &:first-child {
+                        background-image: url('/assets/images/projects (2).png');
+                    }
+
+                    &:last-child {
+                        margin-top: auto;
+                        background-image: url('/assets/images/projects (1).png');
+                        display: flex;
+
+                        span {
+                            background-color: $black-trans;
+                            color: $white;
+                            font-size: 30px;
+                            width: 100%;
+                            height: 100%;
+                            @include center-row-col;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.activity {
+            span {
+                font-size: 14px !important;
+            }
+        }
+    }
+
+    .footer {
+        h5 {}
+    }
+}

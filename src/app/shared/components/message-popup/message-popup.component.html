@@ -1,0 +1,13 @@
+<popup [showCloseBtn]="false" [showLottieCircle]="true"
+    [lottiePath]="data.iconPath">
+    <div class="message-popup x-font-bold">
+        <h2 class="x-font-bold">
+            <container-element [ngSwitch]="data.type" class="w-100">
+                <div *ngSwitchCase="popupTypeEnum.Success">{{'done' | lang}} !</div>
+                <div *ngSwitchCase="popupTypeEnum.Error">{{'error' | lang}} !</div>
+                <div *ngSwitchCase="popupTypeEnum.Exclamation">{{'info' | lang}} !</div>
+            </container-element>
+        </h2>
+        <p class="x-font-medium">{{data.msg}}</p>
+    </div>
+</popup>

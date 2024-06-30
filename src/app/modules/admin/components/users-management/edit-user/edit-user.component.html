@@ -1,0 +1,13 @@
+<popup [title]="'editUser' | lang" [showCloseBtn]="true" [showLottieCircle]="true" [lottiePath]="data.iconPath"
+    [iconBackground]="true">
+    <form [formGroup]="editUserForm" class="admin-form" (ngSubmit)="save()">
+        <input type="hidden" class="form-control" formControlName="id">
+        <div class="input-div">
+            <label>{{'name' | lang}}</label>
+            <input type="text" class="form-control" formControlName="displayName">
+        </div>
+        <div class="d-flex align-items-center justify-content-center mt-5 w-100">
+            <input [disabled]="submitted || editUserForm.value.displayName == user.displayName" type="submit" [value]="'save' | lang" class="x-btn-mail-primary bg-blue">
+        </div>
+    </form>
+</popup>

@@ -1,0 +1,172 @@
+@import './variables';
+
+// Material Icons font family
+@font-face {
+  font-family: $material_icons;
+  src: url('/assets/fonts/material/material.woff2') format('woff2');
+}
+
+// Roboto font family
+@font-face {
+  font-family: $roboto_thin;
+  src: url('/assets/fonts/robotoo/Roboto-Thin.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: $roboto_thin_italic;
+  src: url('/assets/fonts/robotoo/Roboto-ThinItalic.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: $roboto_light;
+  src: url('/assets/fonts/robotoo/Roboto-Light.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: $roboto_light_italic;
+  src: url('/assets/fonts/robotoo/Roboto-LightItalic.ttf') format("truetype");
+}
+
+
+@font-face {
+  font-family: $roboto_regular;
+  src: url('/assets/fonts/robotoo/Roboto-Regular.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: $roboto_medium;
+  src: url('/assets/fonts/robotoo/Roboto-Medium.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: $roboto_medium_italic;
+  src: url('/assets/fonts/robotoo/Roboto-MediumItalic.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: $roboto_bold;
+  src: url('/assets/fonts/robotoo/Roboto-Bold.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: $roboto_bold_italic;
+  src: url('/assets/fonts/robotoo/Roboto-BoldItalic.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: $roboto_black;
+  src: url('/assets/fonts/robotoo/Roboto-Black.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: $roboto_black_italic;
+  src: url('/assets/fonts/robotoo/Roboto-BlackItalic.ttf') format("truetype");
+}
+
+// Neo Sans Arabic font family
+
+@font-face {
+  font-family: $font_arabic_light;
+  src: url('/assets/fonts/neo_sans_arabic/NeoSansArabicLight.ttf') format("truetype");
+}
+
+
+@font-face {
+  font-family: $font_arabic_regular;
+  src: url('/assets/fonts/neo_sans_arabic/NeoSansArabicRegular.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: $font_arabic_medium;
+  src: url('/assets/fonts/neo_sans_arabic/NeoSansArabicMedium.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: $font_arabic_bold;
+  src: url('/assets/fonts/neo_sans_arabic/NeoSansArabicBold.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: $font_arabic_black;
+  src: url('/assets/fonts/neo_sans_arabic/Cairo-BlackNeoSansArabicBlack.ttf') format("truetype");
+}
+
+.x-arabic-bold {
+  font-family: $font_arabic_medium;
+}
+.x-english-bold {
+  font-family: $roboto_bold;
+}
+
+::ng-deep {
+  body[dir='rtl'],body[dir='ltr'] {
+
+    .x-font-regular {
+      font-family: $font_arabic_regular;
+    }
+
+    .x-font-medium {
+      font-family: $font_arabic_regular;
+    }
+
+    .x-font-bold {
+      font-family: $font_arabic_medium;
+    }
+
+    .x-font-black {
+      font-family: $font_arabic_bold;
+    }
+  }
+
+  /*
+  body[dir='ltr'] {
+    .x-font-thin {
+      font-family: $roboto_thin;
+    }
+
+    .x-font-thin-italic {
+      font-family: $roboto_thin_italic;
+    }
+
+    .x-font-light {
+      font-family: $roboto_light;
+    }
+
+    .x-font-light-italic {
+      font-family: $roboto_light_italic;
+    }
+
+    .x-font-regular {
+      font-family: $roboto_regular;
+    }
+
+    .x-font-medium {
+      font-family: $roboto_medium;
+    }
+
+    .x-font-medium-italic {
+      font-family: $roboto_medium_italic;
+    }
+
+    .x-font-bold {
+      font-family: $roboto_bold;
+    }
+
+    .x-font-bold-italic {
+      font-family: $roboto_bold_italic;
+    }
+
+    .x-font-black {
+      font-family: $roboto_black;
+    }
+
+    .x-font-black-italic {
+      font-family: $roboto_black_italic;
+    }
+
+    .x-arabic-bold {
+      font-family: $font_arabic_bold;
+    }
+  }
+  */
+}

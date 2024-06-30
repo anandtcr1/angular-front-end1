@@ -1,0 +1,126 @@
+<div class="users-container w-100">
+    <h4 class="mt-3">{{'adminPanel' | lang}}</h4>
+    <div class="head">
+        <div class="w-100 row p-0">
+            <div class="col-lg-8 col-12 d-flex p-0 btns-div">
+                <button class="x-btn-mail-primary-outline btn-filter">
+                    <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.67648 6.87134H15.9518M1.85767 1.2337H18.7706M7.4953 12.509H13.1329" stroke="#646464"
+                            stroke-width="1.88297" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div>{{'filters' | lang}}</div>
+                </button>
+
+                <button class="x-btn-mail-primary bg-blue" (click)="createUser()">
+                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.4924 1.29407V14.4485M1.91516 7.87131H15.0696" stroke="white" stroke-width="1.88297"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div>{{'addUser' | lang}}</div>
+                </button>
+            </div>
+            <div class="col-lg-4 col-12 p-0 mt-lg-0 mt-3">
+                <div class="input-div d-flex align-items-center justify-content-between">
+                    <fa-icon [icon]="['fas','search']"></fa-icon>
+                    <input class="form-control" [(ngModel)]="filter.displayName" (keyup)="getList()"
+                        [placeholder]="'search' | lang">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content" direction>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>{{'userName' | lang}}</th>
+                    <th>{{'email' | lang}}</th>
+                    <th>{{'phone' | lang}}</th>
+                    <th>{{'stoppedFromLogin' | lang}}</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="loading">
+                    <td colspan="5">
+                        <div class="d-flex align-items-center justify-content-center w-100">
+                            <app-loader></app-loader>
+                        </div>
+                    </td>
+                </tr>
+                <tr *ngIf="!loading && users.length == 0 && newUsers.length == 0">
+                    <td colspan="5">
+                        <div class="d-flex align-items-center justify-content-center w-100">
+                            <app-not-found></app-not-found>
+                        </div>
+                    </td>
+                </tr>
+                <tr *ngFor="let item of newUsers">
+                    <td>{{item.displayName}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.phoneNumber}}</td>
+                    <td>{{item.lockoutEnabled +'' | lang}}</td>
+                    <td width="10%">
+                        <div class="w-100 d-flex align-items-center justify-content-evenly">
+                            <svg width="20" height="22" viewBox="0 0 20 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M1.40771 5.41165H3.28676M3.28676 5.41165H18.3191M3.28676 5.41165V18.565C3.28676 19.0633 3.48473 19.5413 3.83712 19.8936C4.18951 20.246 4.66745 20.444 5.1658 20.444H14.561C15.0594 20.444 15.5373 20.246 15.8897 19.8936C16.2421 19.5413 16.4401 19.0633 16.4401 18.565V5.41165H3.28676ZM6.10532 5.41165V3.53261C6.10532 3.03425 6.30329 2.55631 6.65568 2.20392C7.00807 1.85153 7.48601 1.65356 7.98437 1.65356H11.7425C12.2408 1.65356 12.7188 1.85153 13.0711 2.20392C13.4235 2.55631 13.6215 3.03425 13.6215 3.53261V5.41165M7.98437 10.1093V15.7464M11.7425 10.1093V15.7464"
+                                    stroke="#646464" stroke-width="1.87904" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+
+                            <svg class="cursor-pointer" (click)="editUser(item)" width="21" height="22"
+                                viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15.1677 2.59308C15.4144 2.34632 15.7074 2.15058 16.0298 2.01704C16.3522 1.88349 16.6977 1.81476 17.0467 1.81476C17.3957 1.81476 17.7412 1.88349 18.0636 2.01704C18.386 2.15058 18.679 2.34632 18.9257 2.59308C19.1725 2.83984 19.3682 3.13279 19.5018 3.4552C19.6353 3.7776 19.7041 4.12316 19.7041 4.47213C19.7041 4.8211 19.6353 5.16665 19.5018 5.48906C19.3682 5.81147 19.1725 6.10441 18.9257 6.35117L6.2422 19.0347L1.07483 20.444L2.48411 15.2766L15.1677 2.59308Z"
+                                    stroke="#646464" stroke-width="1.87904" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </td>
+                </tr>
+                <tr *ngFor="let item of users">
+                    <td>{{item.displayName}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.phoneNumber}}</td>
+                    <td>{{item.lockoutEnabled +'' | lang}}</td>
+                    <td width="10%">
+                        <div class="w-100 d-flex align-items-center justify-content-evenly">
+                            <svg width="20" height="22" viewBox="0 0 20 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M1.40771 5.41165H3.28676M3.28676 5.41165H18.3191M3.28676 5.41165V18.565C3.28676 19.0633 3.48473 19.5413 3.83712 19.8936C4.18951 20.246 4.66745 20.444 5.1658 20.444H14.561C15.0594 20.444 15.5373 20.246 15.8897 19.8936C16.2421 19.5413 16.4401 19.0633 16.4401 18.565V5.41165H3.28676ZM6.10532 5.41165V3.53261C6.10532 3.03425 6.30329 2.55631 6.65568 2.20392C7.00807 1.85153 7.48601 1.65356 7.98437 1.65356H11.7425C12.2408 1.65356 12.7188 1.85153 13.0711 2.20392C13.4235 2.55631 13.6215 3.03425 13.6215 3.53261V5.41165M7.98437 10.1093V15.7464M11.7425 10.1093V15.7464"
+                                    stroke="#646464" stroke-width="1.87904" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+
+                            <svg class="cursor-pointer" (click)="editUser(item)" width="21" height="22"
+                                viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15.1677 2.59308C15.4144 2.34632 15.7074 2.15058 16.0298 2.01704C16.3522 1.88349 16.6977 1.81476 17.0467 1.81476C17.3957 1.81476 17.7412 1.88349 18.0636 2.01704C18.386 2.15058 18.679 2.34632 18.9257 2.59308C19.1725 2.83984 19.3682 3.13279 19.5018 3.4552C19.6353 3.7776 19.7041 4.12316 19.7041 4.47213C19.7041 4.8211 19.6353 5.16665 19.5018 5.48906C19.3682 5.81147 19.1725 6.10441 18.9257 6.35117L6.2422 19.0347L1.07483 20.444L2.48411 15.2766L15.1677 2.59308Z"
+                                    stroke="#646464" stroke-width="1.87904" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </td>
+                </tr>
+                <tr *ngIf="users && users.length">
+                    <td colspan="5">
+                        <div class="d-flex align-items-center justify-content-between pagination">
+                            <button [disabled]="filter.pageNumber <= 1" class="x-btn-mail-primary-outline"
+                                (click)="filter.pageNumber = filter.pageNumber - 1; getList();">
+                                {{'previous' | lang}}
+                            </button>
+                            <div>{{'page' | lang}} {{filter.pageNumber}} {{'of' | lang}}
+                                {{lastPageIndex}}</div>
+                            <button [disabled]="filter.pageNumber == lastPageIndex" class="x-btn-mail-primary-outline"
+                                (click)="filter.pageNumber = filter.pageNumber + 1; getList();">
+                                {{'next' | lang}}
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

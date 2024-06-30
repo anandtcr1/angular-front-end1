@@ -1,0 +1,44 @@
+@import "src/app/shared/styles/mixin";
+@import "src/app/shared/styles/functions";
+
+popup {
+    @include media-lt-xl {
+        font-size: 12px;
+    }
+
+    @include media-xxl {
+        font-size: 14px;
+    }
+
+    .lang-popup {
+        @include media(1400px, auto) {
+            padding: 0 1.7rem;
+        }
+
+        h2 {
+            font-size: font-size(40);
+            color: $black;
+            text-align: center;
+
+            @include media(1400px, auto) {
+                margin-bottom: 2rem;
+                margin-top: 1rem;
+            }
+
+            @include media-lt-xs {
+                font-size: font-size(30);
+            }
+
+        }
+
+        .x-btn-mail-primary {
+            padding: 0.5rem 1rem;
+            width: 40%;
+            margin: auto;
+
+            @include media(1400px, auto) {
+                padding: 0.3rem 1rem;
+            }
+        }
+    }
+}

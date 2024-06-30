@@ -1,0 +1,224 @@
+@import "src/app/shared/styles/variables";
+@import "src/app/shared/styles/mixin";
+@import "src/app/shared/styles/chips";
+
+@mixin outline-button-usercontainer-template {
+    border-color: $light-gray;
+    color: $green-black;
+    margin-inline-end: 5px;
+
+    &:hover {
+        border-color: $light-gray;
+        background-color: $green-black;
+        color: $white;
+
+        svg {
+            path {
+                stroke: $white;
+            }
+        }
+    }
+}
+
+.users-container {
+    h4 {
+        color: $gray-heavy;
+    }
+
+    .w-fit-content {
+        width: fit-content;
+        flex: auto;
+        margin-inline-start: 5px;
+    }
+
+    .head {
+        width: 100%;
+        @include center-row-col;
+        margin-top: 2rem;
+        margin-bottom: .4rem;
+
+        .btns-div {
+            @include media-lt-md {
+                justify-content: space-between;
+            }
+        }
+
+        .btn-filter {
+            @include outline-button-usercontainer-template;
+        }
+
+        button {
+            border-radius: 10px;
+            font-size: 13px;
+
+            div {
+                margin-inline-start: 5px;
+            }
+        }
+
+        .input-div {
+            border: 1px solid $light-gray;
+            border-radius: 5px;
+            padding: 0 5px;
+            color: $green-black;
+            margin-inline-start: auto;
+
+            input {
+                @include input-without-background;
+                font-size: 13px;
+            }
+        }
+
+        fa-icon {
+            font-size: 13px;
+        }
+    }
+
+    .content {
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+
+            thead {
+                th {
+                    background-color: $white-2;
+                    font-size: 14px;
+                    color: $green-black;
+                    border-top: 1px solid $light-gray-2;
+                    border-bottom: 1px solid $light-gray-2;
+                    // text-align: center;
+
+                    &:first-of-type {
+                        border-radius: 10px 0 0 0;
+                        border-left: 1px solid $light-gray-2;
+
+                    }
+
+                    &:last-of-type {
+                        border-radius: 0 10px 0 0;
+                        border-right: 1px solid $light-gray-2;
+
+                    }
+                }
+            }
+
+            tbody {
+                td {
+                    color: $black-5;
+                    border-top: 1px solid $light-gray-2;
+                    border-bottom: 1px solid $light-gray-2;
+
+                    //text-align: center;
+                    svg {
+                        width: 15px;
+                        height: 15px;
+                    }
+
+                    &:first-of-type {
+                        border-left: 1px solid $light-gray-2;
+                    }
+
+                    &:last-of-type {
+                        border-right: 1px solid $light-gray-2;
+                    }
+                }
+            }
+
+            .pagination {
+                font-size: 12px;
+
+                button {
+                    border-color: $light-gray;
+                    color: $green-black;
+                    margin-inline-end: 5px;
+                    border-radius: 10px;
+                    width: 150px;
+
+                    @include media-lt-lg {
+                        width: 120px;
+                    }
+
+                    @include media-lt-md {
+                        width: 100px;
+                    }
+
+                    @include media-lt-sm {
+                        width: 60px;
+                    }
+
+                    &:not(:disabled):hover {
+                        border-color: $light-gray;
+                        background-color: $green-black;
+                        color: $white;
+
+                        svg {
+                            path {
+                                stroke: $white;
+                            }
+                        }
+                    }
+                }
+            }
+
+            tr:last-of-type {
+                border: 2px solid $light-gray-2;
+
+                td {
+                    border-left: 1px solid $light-gray-2;
+                    border-right: 1px solid $light-gray-2;
+                    border-radius: 0 0 10px 10px;
+                }
+
+            }
+
+        }
+
+        &[dir='rtl'] {
+            table {
+                thead {
+                    th {
+                        &:last-of-type {
+                            border-radius: 10px 0 0 0;
+                            border-left: 1px solid $light-gray-2;
+                            border-right: none;
+                        }
+
+                        &:first-of-type {
+                            border-radius: 0 10px 0 0;
+                            border-right: 1px solid $light-gray-2;
+                            border-left: none;
+                        }
+                    }
+                }
+
+                tbody {
+                    td {
+                        &:last-of-type {
+                            border-left: 1px solid $light-gray-2;
+                            border-right: none;
+                        }
+
+                        &:first-of-type {
+                            border-right: 1px solid $light-gray-2;
+                            border-left: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .control-btn {
+        .x-btn-mail-primary-outline {
+            @include outline-button-usercontainer-template;
+        }
+
+        button {
+            border-radius: 2rem;
+
+            @include media-lt-md {
+                font-size: 12px;
+            }
+        }
+    }
+}

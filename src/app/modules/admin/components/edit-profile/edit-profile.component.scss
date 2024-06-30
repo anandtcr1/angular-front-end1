@@ -1,0 +1,78 @@
+@import "src/app/shared/styles/variables";
+@import "src/app/shared/styles/mixin";
+
+.fileContainer {
+    overflow: hidden;
+    position: relative;
+}
+
+.fileContainer [type=file] {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    text-align: right;
+}
+
+
+.personal-img-div {
+    @include center-col-row;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    padding: 8px;
+    overflow: hidden;
+    margin: 50px auto;
+    background-color: $gray-e6;
+    img {
+        max-width: 110%;
+        max-height: 110%;
+        width: auto;
+        height: auto;
+    }
+}
+
+
+
+.zone {      
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+    width:100%;
+    height:100%;  
+    border:2px dashed #e9ecef;
+    text-align:center;
+    transition: all 0.3s ease-out;
+
+    i {
+      text-align: center;
+      font-size: 2em;  
+      color:#fff;
+      margin-top: 10px;
+    }
+    .selectFile {
+      height: 50px;
+      margin: 20px auto;
+      position: relative;
+      width: 200px;          
+    }
+  
+    label, input {
+      cursor: pointer;
+      display: block;
+      height: 50px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      border-radius: 5px;          
+    }
+  
+    label {
+      display: inline-block;
+      line-height: 50px;
+      padding: 0;
+      text-align: center;
+      white-space: nowrap;
+      font-weight: 400;   
+      box-shadow: 0 1px 1px gray;
+    }    
+  }

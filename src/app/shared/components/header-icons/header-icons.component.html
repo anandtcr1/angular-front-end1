@@ -1,0 +1,15 @@
+<div class="icons-area d-flex align-items-center justify-content-end">
+    <small class="text-center lang-item text-bold d-flex" (click)="setLang()">
+        <container-element [ngSwitch]="lang" class="w-100">
+            <div *ngSwitchCase="langEnum.English">English</div>
+            <div *ngSwitchCase="langEnum.Arabic">عربي</div>
+            <div *ngSwitchDefault>...</div>
+        </container-element>
+    </small>
+    <fa-icon [icon]="['far','bell']"></fa-icon>
+    <fa-icon [icon]="['fas','gear']"></fa-icon>
+    <div class="personal-img-div" [routerLink]="['/admin/my-profile']" routerLinkActive="router-link-active" >
+        <img src="assets/images/mustafa.png">
+    </div>
+    <fa-icon [icon]="['far','moon']"></fa-icon>
+</div>

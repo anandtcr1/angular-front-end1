@@ -1,0 +1,79 @@
+<div class="users-container w-100">
+    <h4 class="mt-3">{{'roles' | lang}}</h4>
+    <div class="head">
+        <div class="w-100 row p-0">
+            <div class="col-lg-8 col-12 d-flex p-0 btns-div">
+                <button class="x-btn-mail-primary-outline btn-filter">
+                    <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.67648 6.87134H15.9518M1.85767 1.2337H18.7706M7.4953 12.509H13.1329" stroke="#646464"
+                            stroke-width="1.88297" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div>{{'filters' | lang}}</div>
+                </button>
+
+                <button class="x-btn-mail-primary bg-blue" (click)="openRoleDetails()">
+                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.4924 1.29407V14.4485M1.91516 7.87131H15.0696" stroke="white" stroke-width="1.88297"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div>{{'addRole' | lang}}</div>
+                </button>
+            </div>
+            <div class="col-lg-4 col-12 p-0 mt-lg-0 mt-3">
+                <div class="input-div d-flex align-items-center justify-content-between">
+                    <fa-icon [icon]="['fas','search']"></fa-icon>
+                    <input class="form-control" [(ngModel)]="filter.name" (keypress)="getList()"
+                        [placeholder]="'search' | lang">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content" direction>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>{{'roleName' | lang}}</th>
+                    <th>{{'status' | lang}}</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of roles">
+                    <td>{{item.name}}</td>
+                    <td *ngIf="item.isActive">{{'active' | lang}}</td>
+                    <td *ngIf="!item.isActive">{{'deactive' | lang}}</td>
+                    <td><a [routerLink]="['../role-permissions', item.id]">{{'permissions' | lang}}</a></td>
+                    <td width="10%">
+                        <div class="w-100 d-flex align-items-center justify-content-evenly"
+                            (click)="openRoleDetails(item)">
+                            <svg class="cursor-pointer" width="21" height="22" viewBox="0 0 21 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15.1677 2.59308C15.4144 2.34632 15.7074 2.15058 16.0298 2.01704C16.3522 1.88349 16.6977 1.81476 17.0467 1.81476C17.3957 1.81476 17.7412 1.88349 18.0636 2.01704C18.386 2.15058 18.679 2.34632 18.9257 2.59308C19.1725 2.83984 19.3682 3.13279 19.5018 3.4552C19.6353 3.7776 19.7041 4.12316 19.7041 4.47213C19.7041 4.8211 19.6353 5.16665 19.5018 5.48906C19.3682 5.81147 19.1725 6.10441 18.9257 6.35117L6.2422 19.0347L1.07483 20.444L2.48411 15.2766L15.1677 2.59308Z"
+                                    stroke="#646464" stroke-width="1.87904" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="9">
+                        <div class="d-flex align-items-center justify-content-between pagination">
+                            <button [disabled]="filter.pageNumber == 1" class="x-btn-mail-primary-outline"
+                                (click)="filter.pageNumber = filter.pageNumber - 1; getList();">
+                                {{'previous' | lang}}
+                            </button>
+                            <div>{{'page' | lang}} {{filter.pageNumber}} {{'of' | lang}}
+                                {{lastPageIndex}}</div>
+                            <button [disabled]="filter.pageNumber == lastPageIndex" class="x-btn-mail-primary-outline"
+                                (click)="filter.pageNumber = filter.pageNumber + 1; getList();">
+                                {{'next' | lang}}
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

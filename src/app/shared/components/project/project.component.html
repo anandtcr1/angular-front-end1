@@ -1,0 +1,33 @@
+<div class="project-container">
+    <div class="header" *ngIf="type == userActionsEnum.Post">
+        <div class="personal-info d-flex align-items-center">
+            <div class="personal-img">
+                <img src="assets/images/mustafa.png">
+            </div>
+            <div class="d-flex flex-column align-items-start">
+                <div class="name">Mustafa Abukhmaish</div>
+                <small class="time">15mins ago</small>
+            </div>
+            <fa-icon [icon]="['fas','ellipsis']"></fa-icon>
+        </div>
+    </div>
+    <div class="body mt-3 mb-2" [ngClass]="{'post': type == userActionsEnum.Post , 'activity' : type == userActionsEnum.Activity}">
+        <div class="three-img">
+            <div class="main">
+                <!-- <img src="assets/images/projects (3).png"> -->
+            </div>
+            <div class="adds">
+                <div></div>
+                <div>
+                    <span>+10</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer mt-2">
+        <h5>Project Name</h5>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+        </p>
+    </div>
+</div>

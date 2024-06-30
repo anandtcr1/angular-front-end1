@@ -1,0 +1,139 @@
+@import './variables';
+@import './functions';
+@import './mixin';
+@import './buttons';
+@import './chips';
+@import './layouts';
+@import './table';
+
+// Width From 1% to 100%
+@include width(full, 0, set);
+@include width(sm, $sm-width, set);
+@include width(md, $md-width, set);
+@include width(lg, $lg-width, set);
+@include width(xl, $xl-width, set);
+// Width unset
+@include width(full, 0, unset);
+@include width(sm, $sm-width, unset);
+@include width(md, $md-width, unset);
+@include width(lg, $lg-width, unset);
+@include width(xl, $xl-width, unset);
+
+.blue {
+  color: $blue;
+}
+
+.bg-blue {
+  background-color: $blue;
+}
+
+.bg-gray {
+  background-color: $gray-bg;
+}
+
+.black {
+  color: $black;
+}
+
+.gray-primary {
+  color: $gray-primary;
+}
+
+.gray-9 {
+  color: $gray-9;
+}
+
+.white {
+  color: $white;
+}
+
+.black-3 {
+  color: $black-3;
+}
+
+.border-black-3 {
+  border-color: $black-3 !important;
+}
+
+.bg-black-6 {
+  background-color: $black-6;
+}
+
+.white-fa {
+  color: $white-fa;
+}
+
+.bg-white-fa {
+  background-color: $white-fa;
+}
+
+.blue-dark {
+  color: $blue-dark;
+}
+
+.bg-blue-dark {
+  background-color: $blue-dark;
+}
+
+.border-gray-primary {
+  border-color: $gray-primary;
+}
+
+.list-group-item.active {
+  background-color: $blue;
+  border-color: $blue;
+}
+
+.gray-7B {
+  color: $gray-7B;
+}
+
+.green {
+  color: $green;
+}
+
+.bg-green {
+  background-color: $green;
+}
+
+.red {
+  color: $red;
+}
+
+.bg-red {
+  background-color: $red;
+}
+
+.bg-gray {
+  background-color: $gray;
+}
+
+.bg-orange {
+  background-color: $orange;
+}
+
+.yellow {
+  color: $yellow;
+}
+
+.dropdown-menu {
+  text-align: inherit;
+}
+
+.w-inherit {
+  width: inherit;
+}
+
+.bd-example {
+  .btn-outline-secondary {
+    margin-inline-start: auto;
+  }
+}
+
+.gray-light {
+  color: $gray-light;
+}
+
+.bg-gray-light {
+  background-color: $gray-light;
+}

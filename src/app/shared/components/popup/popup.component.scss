@@ -1,0 +1,83 @@
+@import "../../styles/mixin";
+
+.x-popup {
+  background-color: $white;
+  //box-shadow: 0px 15px 30px $gray;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 1rem;
+  //border-bottom: 5px solid $blue;
+  .lottie-circle {
+    position: absolute;
+    top: -50px;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+  }
+}
+
+::ng-deep {
+  .x-popup{
+    app-lottie-container{
+      border: 10px solid $white;
+      border-radius: 50%;
+    }
+  }
+  .modal-dialog{
+    margin-top: 5rem;
+  }
+  .mat-dialog-title {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+
+    button {
+      background-color: transparent;
+      outline: none;
+      border: none;
+
+
+      svg {
+        width: 28px;
+        height: 28px;
+
+        @include media(1400px, auto) {
+          width: 40px;
+          height: 40px;
+        }
+
+        path {
+          transition: fill 0.3s ease;
+          fill: $black;
+        }
+      }
+
+      &:hover {
+        svg {
+          path {
+            fill: $black
+          }
+        }
+      }
+    }
+  }
+
+  .mat-dialog-content {
+    margin: 0;
+
+    @include media-lt-xs {
+      padding: 0.4rem;
+    }
+  }
+
+  .mat-dialog-actions {
+    margin: 0;
+    min-height: auto
+  }
+
+  .modal-content {
+    background: none;
+    border: none;
+  }
+}

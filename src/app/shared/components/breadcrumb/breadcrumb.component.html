@@ -1,0 +1,12 @@
+<ol class="breadcrumb w-100 d-flex align-items-center justify-content-start"
+  *ngIf="breadcrumbs && breadcrumbs.length > 0">
+  <!-- <div class="back" [routerLink]="breadcrumbs[breadcrumbs.length -2].url" routerLinkActive="router-link-active">
+    <mat-icon direction>arrow_right_alt</mat-icon>
+    <div>{{'back' | lang}}</div>
+  </div> -->
+  <li *ngFor="let breadcrumb of breadcrumbs">
+    <span [routerLink]="breadcrumb.url" routerLinkActive="router-link-active">
+      {{ breadcrumb.label }}
+    </span>
+  </li>
+</ol>

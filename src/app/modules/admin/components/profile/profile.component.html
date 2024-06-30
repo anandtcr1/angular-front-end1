@@ -1,0 +1,41 @@
+<app-cover [personalInfo]="personalInfo"></app-cover>
+<div class="row mt-2 profile-container">
+    <div class="col-lg-3 col-12">
+        <div class="about">
+            <h5>{{'about' | lang}}</h5>
+            <div class="about-body">
+                <span *ngIf="getGender(personalInfo.profile.gender)">
+                    <fa-icon [icon]="['fas','venus-mars']"></fa-icon>
+                    <span>{{getGender(personalInfo.profile.gender).text | lang}}</span>
+                </span>
+                <span>
+                    <fa-icon [icon]="['fas','calendar']"></fa-icon>
+                    <span>{{'born' | lang}} {{personalInfo.profile.birthDate | date :'dd/MMM/YYYY'}}</span>
+                </span>
+                <span>
+                    <fa-icon [icon]="['fas', 'location-dot']"></fa-icon>
+                    <span>Ajman,Black Square office 409</span>
+                </span>
+                <span>
+                    <fa-icon [icon]="['fas','envelope']"></fa-icon>
+                    <span>{{personalInfo.email}}</span>
+                </span>
+                <span *ngIf="personalInfo.phoneNumberConfirmed">
+                    <fa-icon [icon]="['fas','phone']"></fa-icon>
+                    <span>{{personalInfo.phoneNumber}}</span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-12">
+        <h4 class="w-100 bg-white p-3 mb-3 title">{{'projects' | lang}}</h4>
+        <div>
+            <app-project [type]="userActionsEnum.Post"></app-project>
+        </div>
+    </div>
+    <div class="col-lg-3 col-12">
+        <h4 class="mb-2">{{'activates' | lang}}</h4>
+        <app-project [type]="userActionsEnum.Activity"></app-project>
+        <app-project [type]="userActionsEnum.Activity"></app-project>
+    </div>
+</div>

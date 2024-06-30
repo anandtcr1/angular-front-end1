@@ -1,0 +1,52 @@
+@import 'src/app/shared/styles/variables';
+@import 'src/app/shared/styles/mixin';
+
+.role-details {
+    .items {
+        display: flex;
+        align-items: center;
+        flex-flow: wrap;
+
+        .item {
+            background-color: $blue;
+            color: $white;
+            @include center-row-col;
+            width: fit-content;
+            padding: 3px 10px;
+            border-radius: 1rem;
+            margin: 3px;
+            &:first-of-type {
+                margin-inline-start: 0;
+            }
+
+            &:last-of-type {
+                margin-inline-end: 0;
+            }
+
+            small {
+                &.post {
+                    margin-inline-end: 5px;
+                }
+                &.pre{
+                    margin-inline-start: 5px;
+                }
+            }
+
+            fa-icon {
+                &:hover {
+                    color: $red;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .add {
+            background-color: $green;
+            cursor: pointer;
+            margin: 3px;
+            &:hover{
+            opacity: 0.8;
+            }
+        }
+    }
+}

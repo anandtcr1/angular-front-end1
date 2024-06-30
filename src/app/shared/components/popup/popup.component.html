@@ -1,0 +1,18 @@
+<div class="x-popup" [class]="panelClass">
+  <div class="lottie-circle" *ngIf="showLottieCircle">
+    <app-lottie-container  [ngClass]="{'bg-blue': iconBackground,'bg-white' : !iconBackground}" [path]="lottiePath" width="90px" height="90px"></app-lottie-container>
+  </div>
+  <div [ngClass]="{'pt-5': showLottieCircle}" class="d-flex align-items-center justify-content-between" *ngIf="(title && title != '') || showCloseBtn">
+    <h4>{{title | lang}}</h4>
+    <button *ngIf="showCloseBtn" class="btn-close" (click)="close()">
+    </button>
+  </div>
+  <div class="mt-3">
+    <ng-content></ng-content>
+  </div>
+  <hr *ngIf="showActionsButtons">
+  <div *ngIf="showActionsButtons" class="d-flex align-items-center justify-content-between">
+    <button class="x-btn-mail-primary">{{cancelButton | lang}}</button>
+    <button class="x-btn-mail-primary bg-blue">{{confirmButton | lang}}</button>
+  </div>
+</div>

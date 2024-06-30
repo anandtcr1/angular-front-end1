@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import "src/app/shared/styles/styles";
+
+i {
+    text-align: center;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.text-bold{
+    font-weight: bold;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+body {
+    color: $black-1;
+    background-color: white;
+}
+
+.d-block.modal.position-relative {
+    position: absolute !important;
+}

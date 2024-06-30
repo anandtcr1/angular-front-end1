@@ -1,0 +1,10 @@
+@import 'src/app/shared/styles/variables';
+@import 'src/app/shared/styles/chips';
+.search-area-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    input {
+        @include input-without-background;
+    }
+}

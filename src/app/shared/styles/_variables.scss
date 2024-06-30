@@ -1,0 +1,87 @@
+$sm-width: 576px;
+$md-width: 768px;
+$lg-width: 992px;
+$xl-width: 1200px;
+
+// Material Icons font family
+$material_icons: "Material Icons";
+
+$gray : #ddd;
+$gray-bg : #e3e3e3;
+//$blue : #0d6efd;
+//$blue : #ff0067;
+$blue : #0159DF;
+//$blue: hsl(233deg 36% 38%);
+$black: #515151;
+$white : #fff;
+$gray-border : #d2d2d2;
+$black-3 : #333;
+$gray-primary : rgb(187, 177, 177);
+$black-6 :#666;
+$border-color:#ced4da;
+$gray-9 : #999;
+$black-secondary : #292929;
+$gray-7E : #7E7E7E;
+$gray-7B : #7B7B7B;
+$gray-74 : #747474;
+$gray-4A : #4A4A4A;
+$gray-3A : #3A3A3A;
+$gray-9A : #9A9A9A;
+$gold : #51D16A;
+$green:#4a967f;
+$orange:#fe6601;
+$yellow : #FFE600;
+$white-secondary : #F5F5F5;
+$white-secondary-2 : #FEFEFE;
+$white-secondary-3 : #F3F3F3;
+$red : #F42121;
+$white-sign: hsl(213deg 85% 97%);
+$gray-light : #B4B4B4;
+$black-1 : #0D1D2C;
+$blue-facebook : #285296;
+$black-4 : #444444;
+$green-black : #646464;
+$gray-d9 : #D9D9D9;
+$gray-e6 : #E6E6E6;
+$gray-dark : #8B8C8C;
+$white-fa : #FAFAFA;
+$blue-dark : #0159DF;
+$gray-c8 : #C8C8C8;
+$gray-heavy : #8F92A1;
+$light-gray : #D0D5DD;
+$light-gray-2 : #EAECF0;
+$white-2 : #F9FAFB;
+$black-5 : #101828;
+$gray-light-2 : #F2F2F2;
+$border-black : #03022914;
+$black-trans : #00000091;
+
+$shadow : rgba(0, 0, 0, 0.3);
+$shadow-2 : rgba(0, 0, 0, 0.2);
+
+$main-grad : linear-gradient(90deg, rgba(33, 119, 244, 1) 0%, rgba(48, 97, 167, 1) 100%);
+//$main-grad : linear-gradient(90deg, rgba(232,64,132,0.7679446778711485) 0%, rgba(250,45,128,0.938813025210084) 50%, rgba(255,0,103,1) 100%);
+
+// Roboto font family
+$roboto_thin: "Roboto-Thin"; // Weight 100
+$roboto_thin_italic: "Roboto-Thin-Italic"; // Weight 100 Italic
+$roboto_light: "Roboto-Light"; // Weight 300
+$roboto_light_italic: "Roboto-Light_Italic"; // Weight 300 Italic
+$roboto_regular: "Roboto-Regular"; // Weight 400
+$roboto_medium: "Roboto-Medium"; // Weight 500
+$roboto_medium_italic: "Roboto-Medium_Italic"; // Weight 500 Italic
+$roboto_bold: "Roboto-Bold"; // Weight 700
+$roboto_bold_italic: "Roboto-Bold-Italic"; // Weight 700 Italic
+$roboto_black: "Roboto-Black"; // Weight 900
+$roboto_black_italic: "Roboto-Black-Italic"; // Weight 900 Italic
+
+// Arabic font family
+$font_arabic_light: "NeoSansArabic-Light"; // Weight 300
+$font_arabic_regular: "NeoSansArabic-Regular"; // Weight 400
+$font_arabic_medium: "NeoSansArabic-Medium"; // Weight 500
+$font_arabic_bold: "NeoSansArabic-Bold"; // Weight 700
+$font_arabic_black: "NeoSansArabic-Black"; // Weight 900
+
+//#f57c00
+//#ffa000
+//#ffca28

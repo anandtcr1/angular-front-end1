@@ -1,0 +1,134 @@
+@import "src/app/shared/styles/variables";
+@import "src/app/shared/styles/functions";
+
+.menu-container {
+  height: 100vh;
+  margin: 0;
+  border-radius: 0;
+  //position: fixed;
+  width: 100%;
+  padding: 2rem 10%;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 3rem;
+  }
+
+  li {
+    list-style: none;
+    padding: 10px 0;
+    padding-inline-start: 15px;
+    width: 100%;
+    cursor: pointer;
+    a,
+    div,
+    fa-icon {
+      color: $green-black;
+    }
+
+    fa-icon {
+      margin-inline-end: 5px;
+    }
+
+    &.active,&:hover {
+      background-color: $blue-dark;
+      border-radius: 10px;
+
+      a,
+      div,
+      fa-icon {
+        color: $white;
+      }
+
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 16px;
+
+      &:not(:first-child) {
+        margin-top: 2px;
+        margin-bottom: 2px;
+        padding: 3px 1rem;
+        margin-inline-start: 1rem;
+        font-size: 12px;
+
+        &:nth-child(2) {
+          margin-top: 15px;
+        }
+
+        &.active {
+          background-color: #ffffff33;
+          border-radius: 1rem 0 0 1rem;
+          border-color: $white;
+          border-style: solid;
+          border-top: none;
+          border-bottom: none;
+          border-left: none;
+          border-right-width: 4px;
+        }
+      }
+    }
+  }
+
+  .logout {
+    padding: 0;
+    margin-top: auto;
+
+    a {
+      border: 1px solid $gray-c8;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 10px;
+      cursor: pointer;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        margin: 0;
+        margin-inline-end: 10px;
+      }
+
+      div {
+        color: $blue-dark;
+      }
+
+      &:hover {
+        background-color: $blue-dark;
+        color: $white;
+
+        div {
+          color: $white;
+        }
+
+        svg {
+          path {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
+
+  &[dir='rtl'] {
+    li {
+      a {
+        &:not(:first-child) {
+          &.active {
+            border-color: $white;
+            border-style: solid;
+            border-radius: 0 1rem 1rem 0;
+            border-right: none;
+            border-top: none;
+            border-bottom: none;
+            border-left-width: 4px;
+          }
+        }
+      }
+    }
+  }
+}

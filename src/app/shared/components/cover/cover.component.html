@@ -1,0 +1,30 @@
+<div class="cover-container">
+    <div class="rows">
+        <div class="first-row">
+            <!-- <img src="assets/images/cover.png"> -->
+            <button class="x-btn-mail-primary bg-white cover-edit">
+                <div class="d-lg-flex d-none text-center justify-content-center">{{'editCoverPhoto' | lang}}</div>
+                <div class="d-lg-none d-flex"><fa-icon [icon]="['fas','edit']"></fa-icon></div>
+            </button>
+        </div>
+        <div class="seconed-row">
+            <div class="left-part">
+                <h4 class="name">{{personalInfo.profile.firstName + ' ' + personalInfo.profile.lastName}}</h4>
+                <div class="position">Contractor</div>
+            </div>
+            <div class="right-part">
+                <button class="x-btn-mail-primary bg-blue upload-btn">
+                    {{'uploadProject' | lang}}
+                    <fa-icon [icon]="['fas','plus-circle']"></fa-icon>
+                </button>
+                <button class="x-btn-mail-primary-outline black-1 edit-btn">
+                    {{'editProfile' | lang}}
+                    <fa-icon [icon]="['fas','pen']"></fa-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="personal-img">
+        <img src="assets/images/mustafa.png">
+    </div>
+</div>

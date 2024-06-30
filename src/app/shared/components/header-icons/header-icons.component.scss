@@ -1,0 +1,41 @@
+@import "src/app/shared/styles/variables";
+@import "src/app/shared/styles/mixin";
+
+.icons-area {
+    padding-inline-start: 1rem;
+    fa-icon {
+        color: $gray-dark;
+        font-size: 20px;
+    }
+
+    .lang-item {
+        div {
+            color: $white;
+            background-color: $blue;
+            border-radius: 2rem;
+            padding: 2px 10px;
+            cursor: pointer;
+            margin-left: auto;
+            width: fit-content;
+        }
+    }
+
+    .personal-img-div {
+        @include center-col-row;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        padding: 8px;
+        background-color: $gray-e6;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    .personal-img-div,.lang-item,fa-icon{
+        margin: 0 10px;
+    }
+}

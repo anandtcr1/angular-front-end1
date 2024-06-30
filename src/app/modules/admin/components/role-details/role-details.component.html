@@ -1,0 +1,25 @@
+<popup [title]="'role' | lang" [showLottieCircle]="true" [lottiePath]="data.iconPath" [iconBackground]="true">
+    <div class="role-details">
+        <form [formGroup]="roleDetails" class="row" (submit)="submitForm()">
+            <section class="col-12">
+                <label for="name">{{'name' | lang}}</label>
+                <input type="text" formControlName="name" class="form-control" placeholder="Role Name">
+                <app-form-error-handeling *ngIf="submitted" [controlVal]="roleDetails.value.name"
+                    [formRef]="roleDetails" [controlName]="'name'"></app-form-error-handeling>
+            </section>
+
+
+            <section class="col-12 mt-3">
+                <input class="form-check-input" type="checkbox" formControlName="isActive"
+                    [checked]="roleDetails.value.isActive" id="idStatus">
+                <label for="idStatus" class="mx-2">{{'isActive' | lang}}</label>
+            </section>
+
+            <div class="col-12 row d-flex align-items-center justify-content-center mt-3">
+                <input type="submit" [value]="'save' | lang" class="x-btn-mail-primary bg-blue col-lg-4 col-md-6 col-12"
+                    [disabled]="!enableSaveButton">
+            </div>
+        </form>
+    </div>
+
+</popup>

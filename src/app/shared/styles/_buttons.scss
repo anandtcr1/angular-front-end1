@@ -1,0 +1,150 @@
+@import './mixin';
+@import './variables';
+@import "./functions";
+
+.x-btn-mail-danger,
+.x-btn-mail-primary,
+.x-btn-mail-primary-outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: $gray;
+  padding: 0.5rem 1rem;
+  font-size: font-size(16);
+  border-radius: 30px;
+  color: $black;
+  min-width: 150px;
+
+  i {
+    font-size: font-size(16);
+  }
+
+  div {
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+    width: 100%;
+  }
+
+  &:active {
+    background-color: $gray;
+    color: $black;
+  }
+
+  &:not(:disabled):hover {
+    background-color: $gray;
+    opacity: .8;
+  }
+
+  &.bg-blue {
+    background-color: $blue;
+    color: $white;
+
+    &:active {
+      background-color: $blue;
+      color: $white;
+    }
+
+    &:not(:disabled):hover {
+      background-color: $blue;
+      opacity: .8;
+    }
+
+    span,
+    div {
+      color: $white;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.x-btn-mail-primary {
+  &.active {
+    border: 1px solid $blue;
+    color: $blue !important;
+    background-color: $white !important;
+  }
+  &.bg-white {
+    background-color: $white !important;
+    color: $black-1;
+  }
+}
+
+.x-btn-mail-danger {
+  color: $white;
+  background-color: $red;
+
+  &:not(:disabled):hover {
+    color: $white;
+    background-color: $red;
+    opacity: .8;
+  }
+}
+
+.x-btn-mail-primary-outline {
+  color: $blue;
+  border-color: $blue;
+  background-color: $white;
+  border: 1px solid;
+  border-radius: 15px;
+
+  &:not(:disabled):hover {
+    color: $white;
+    background-color: $blue;
+  }
+
+  &.black-1 {
+    color: $black-1;
+    border-color: $black-1;
+
+    &:not(:disabled):hover {
+      color: $white;
+      background-color: $black-1;
+    }
+  }
+}
+
+.btn-small {
+  width: 35px;
+  height: 35px;
+
+  &.blue {
+    border: 2px solid $blue;
+    color: $blue;
+  }
+}
+
+.bi-calendar3 {
+  background: $white-secondary-3;
+  border: none;
+  width: 40px;
+}
+
+/*
+button {
+  &.disable {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}*/
+
+.trans-button {
+  background: none;
+  border: none;
+  box-shadow: none;
+
+  &:after {
+    display: none;
+  }
+}
+
+.see-more {
+  color: $gray-7E;
+  font-size: font-size(14);
+  margin: 5px 0;
+  cursor: pointer;
+}

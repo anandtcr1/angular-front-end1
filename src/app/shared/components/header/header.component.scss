@@ -1,0 +1,19 @@
+@import 'src/app/shared/styles/variables';
+nav {
+    height: 60px;
+    position: fixed;
+    width: -webkit-fill-available;
+    padding-inline-end: 2rem;
+    padding-inline-start: 1rem;
+    background-color: $white;
+    z-index: 1000;
+    .logo-div{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        svg {
+            max-width: 80%;
+            max-height: 50px;
+        }
+    }
+}

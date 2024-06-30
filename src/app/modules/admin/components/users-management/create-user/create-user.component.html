@@ -1,0 +1,58 @@
+<popup [title]="'addUser' | lang" [showCloseBtn]="true" [showLottieCircle]="true" [lottiePath]="data.iconPath"
+    [iconBackground]="true">
+    <form [formGroup]="createUserForm" class="admin-form" (ngSubmit)="save()">
+        <section class="mt-1">
+            <div class="input-div">
+                <label>{{'displayName' | lang}}</label>
+                <input type="text" class="form-control" formControlName="displayName">
+                <app-form-error-handeling *ngIf="validation" [controlVal]="createUserForm.value.displayName"
+                    [formRef]="createUserForm" [controlName]="'displayName'"></app-form-error-handeling>
+            </div>
+        </section>
+        <section class="mt-1">
+            <div class="input-div">
+                <label>{{'phoneNumber' | lang}}</label>
+                <input type="number" placeholder="00-00000000" class="form-control" formControlName="phoneNumber">
+                <app-form-error-handeling *ngIf="validation" [controlVal]="createUserForm.value.phoneNumber"
+                    [formRef]="createUserForm" [controlName]="'phoneNumber'"></app-form-error-handeling>
+            </div>
+        </section>
+        <section class="mt-1">
+            <div class="input-div">
+                <label>{{'email' | lang}}</label>
+                <input type="email" class="form-control" formControlName="email">
+                <app-form-error-handeling *ngIf="validation" [controlVal]="createUserForm.value.email"
+                    [formRef]="createUserForm" [controlName]="'email'"></app-form-error-handeling>
+            </div>
+        </section>
+        <section class="mt-1">
+            <div class="input-div">
+                <label>{{'password' | lang}}</label>
+                <div class=" d-flex align-items-center justify-content-between pass-div">
+                    <input [type]="showPassword ? 'text' : 'password'" class="form-control" formControlName="userPassword">
+                    <fa-icon *ngIf="!showPassword" (click)="showPassword = !showPassword" [icon]="['far','eye']"
+                        class="gray-light mx-1"></fa-icon>
+                    <fa-icon *ngIf="showPassword" (click)="showPassword = !showPassword" [icon]="['far','eye-slash']"
+                        class="gray-light mx-1"></fa-icon>
+                </div>
+            </div>
+            <app-form-error-handeling *ngIf="validation" [controlVal]="createUserForm.value.userPassword"
+                [formRef]="createUserForm" [controlName]="'userPassword'"></app-form-error-handeling>
+        </section>
+        <section class="mt-1">
+            <div class="input-div">
+                <label>{{'role' | lang}}</label>
+                <div class=" d-flex align-items-center justify-content-between pass-div">
+                  <select class="form-control" formControlName="roleId">
+                    <option *ngFor="let item of roles" [value]="item.value">{{lang == langEnum.English ? item.englishDisplay : item.arabicDisplay}}</option>
+                  </select>
+                </div>
+            </div>
+            <app-form-error-handeling *ngIf="validation" [controlVal]="createUserForm.value.roleId"
+                [formRef]="createUserForm" [controlName]="'roleId'"></app-form-error-handeling>
+        </section>
+        <div class="d-flex align-items-center justify-content-center mt-5 w-100">
+            <input [disabled]="submitted" type="submit" [value]="'save' | lang" class="x-btn-mail-primary bg-blue">
+        </div>
+    </form>
+</popup>
